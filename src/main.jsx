@@ -11,6 +11,8 @@ import Home from './pages/Home';
 import Brands from './pages/Brands';
 import ErrorPage from './pages/ErrorPage';
 import Root from './layout/Root';
+import Addproduct from './pages/Addproduct';
+import Upadateproduct from './pages/Upadateproduct';
 
 const router = createBrowserRouter([
   {
@@ -27,7 +29,22 @@ const router = createBrowserRouter([
           path : "/brands",
           element : <Brands ></Brands>,
           
-      }
+      },
+      {
+        path : "/AddProduct",
+        element : <Addproduct ></Addproduct>,
+        
+    },
+    {
+      path : "/MyCart",
+      element : <Addproduct ></Addproduct>,
+      
+  },
+  {
+    path : "/UpdateProduct",
+    element : <Upadateproduct></Upadateproduct>,
+    
+}
     ]
    
   },
