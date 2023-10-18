@@ -1,4 +1,4 @@
-
+import Swal from 'sweetalert2'
 
 const Addproduct = () => {
 
@@ -27,6 +27,14 @@ const Addproduct = () => {
           .then(res=>res.json())
           .then(data=>{
             console.log(data);
+            if(data.insertedId){
+              Swal.fire({
+                title: 'success!',
+                text: 'Product added successfully',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
+            }
           })
 
 

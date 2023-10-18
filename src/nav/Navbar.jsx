@@ -1,27 +1,28 @@
 import { NavLink } from "react-router-dom";
 
-// import { useContext, useEffect } from "react";
+import { useContext } from "react";
 // import { AuthContext } from "../../firebase/AuthProvider";
 // import Aos from "aos";
 import 'aos/dist/aos.css';
 import Logo from "./Logo";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Navbar = () => {
 
 
 
 
-//    const {user, logout}= useContext(AuthContext);
+   const {user, logout}= useContext(AuthContext);
 
-//    useEffect(()=>{
-//             Aos.init({duration:1000})
-//    },[])
+   // useEffect(()=>{
+   //          Aos.init({duration:1000})
+   // },[])
 
-//    const singOUT = () =>{
-//       logout()
-//         .then()
-//         .catch()
-//    }
+   const singOUT = () =>{
+      logout()
+        .then()
+        .catch()
+   }
     return (
         <div >
         <nav  className="lg:flex sm:grid sm:grid-cols-3 lg:ml-[240px] text-center items-center relative ">
@@ -92,7 +93,7 @@ const Navbar = () => {
                    </NavLink>
                 </li>
 
-                {/* {
+                {
                   user ?
                    <div>
                    
@@ -114,7 +115,7 @@ const Navbar = () => {
                </li>
                 
 
-                } */}
+                }
               
             </ul>
         </nav>
