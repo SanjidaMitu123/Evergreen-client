@@ -13,6 +13,7 @@ import ErrorPage from './pages/ErrorPage';
 import Root from './layout/Root';
 import Addproduct from './pages/Addproduct';
 import Upadateproduct from './pages/Upadateproduct';
+import Addbrands from './pages/Addbrands';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,12 @@ const router = createBrowserRouter([
   {
     path : "/UpdateProduct",
     element : <Upadateproduct></Upadateproduct>,
+    
+}
+,
+  {
+    path : "/addbrand",
+    element : <Addbrands></Addbrands>,
     
 }
     ]

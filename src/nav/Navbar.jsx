@@ -83,12 +83,12 @@ const Navbar = () => {
                 </li>
                 <li>
                    <NavLink
-                     to="/contacts"
+                     to="/addbrand"
                      className={({ isActive, isPending }) =>
                      isPending ? "pending" : isActive ? "text-gray-400 underline" : ""
                       }
                      >
-                      Contact
+                      Add brands
                    </NavLink>
                 </li>
 
