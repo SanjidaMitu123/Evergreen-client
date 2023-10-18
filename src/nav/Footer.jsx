@@ -11,10 +11,10 @@ const Footer = () => {
   </aside> 
   <nav>
     <header className="footer-title">Services</header> 
-    <a className="link link-hover">Decaration</a> 
+    <a className="link link-hover">New cars</a> 
     <a className="link link-hover">Custom Designs</a> 
-    <a className="link link-hover">Lighting</a> 
-    <a className="link link-hover">Sound</a>
+    <a className="link link-hover">car Lights</a> 
+    <a className="link link-hover">car Sound system</a>
   </nav> 
   <nav>
     <header className="footer-title">Company</header> 
