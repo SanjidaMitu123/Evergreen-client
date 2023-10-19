@@ -1,13 +1,10 @@
 import { NavLink } from "react-router-dom";
-
-// import { useContext } from "react";
-// import { AuthContext } from "../../firebase/AuthProvider";
-// import Aos from "aos";
 import 'aos/dist/aos.css';
 import Logo from "./Logo";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../firebase/Authprovider";
-// import { AuthContext } from "../providers/AuthProvider";
+import Aos from "aos";
+
 
 const Navbar = () => {
 
@@ -16,9 +13,9 @@ const Navbar = () => {
 
    const {user, logout}= useContext(AuthContext);
 
-   // useEffect(()=>{
-   //          Aos.init({duration:1000})
-   // },[])
+   useEffect(()=>{
+            Aos.init({duration:1000})
+   },[])
 
    const singOUT = () =>{
       logout()
@@ -27,10 +24,10 @@ const Navbar = () => {
    }
     return (
         <div >
-        <nav  className="lg:flex sm:grid sm:grid-cols-3 lg:ml-[40px] text-center items-center relative ">
+        <nav data-aos="zoom-out-left" className="lg:flex sm:grid sm:grid-cols-3 lg:ml-[40px] text-center items-center relative ">
             <Logo></Logo>
             <ul className=" lg:flex  sm:grid sm:grid-cols-3 lg:ml-12 text-right sm:gap-2 lg:gap-6 mr-6 lg:font-extrabold sm:font-bold lg:text-2xl mt-4 text-black ">
-                <li>
+                <li data-aos="zoom-out-left">
                   
                   
 
@@ -42,8 +39,8 @@ const Navbar = () => {
                      >
                       Home
                    </NavLink>
-                   </li>
-                   <li>
+                   </li >
+                   <li data-aos="zoom-out-left">
                    <NavLink
                      to="/AddProduct"
                      className={({ isActive, isPending }) =>
@@ -53,7 +50,7 @@ const Navbar = () => {
                      Add Product
                    </NavLink>
                 </li>
-                <li>
+                <li data-aos="zoom-out-left">
                    <NavLink
                      to="/MyCart"
                      className={({ isActive, isPending }) =>
@@ -64,7 +61,7 @@ const Navbar = () => {
                    </NavLink>
                 </li>
              
-                <li>
+                <li data-aos="zoom-out-left">
                    <NavLink
                      to="/brands"
                      className={({ isActive, isPending }) =>
@@ -74,9 +71,9 @@ const Navbar = () => {
                       Brands
                    </NavLink>
                 </li>
-                <li>
+                <li data-aos="zoom-out-left">
                    <NavLink
-                     to="/blogs"
+                     to="/reviews"
                      className={({ isActive, isPending }) =>
                      isPending ? "pending" : isActive ? "text-gray-400 underline" : ""
                       }
@@ -84,25 +81,30 @@ const Navbar = () => {
                      Reviews
                    </NavLink>
                 </li>
-                <li>
+                <li data-aos="zoom-out-left">
                    <NavLink
-                     to="/addbrand"
+                     to="/contact"
                      className={({ isActive, isPending }) =>
                      isPending ? "pending" : isActive ? "text-gray-400 underline" : ""
                       }
                      >
-                      Add brands
+                     Contact Us
                    </NavLink>
                 </li>
-
+                
                 {
                   user ?
+                  
+                  <li>
                    <div>
                    
                   <button onClick={singOUT} className=" btn btn-success">Sing out</button>
                   <span className="text-black"> {user.email} </span>
                   </div>
-               
+                
+
+                  </li>
+                  
 
                   
                   :

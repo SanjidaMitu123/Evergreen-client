@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
@@ -62,12 +63,13 @@ const Addbrands = () => {
                 </div>
 
                 </div>
-                <input type="submit" value="Add Product" className="  btn btn-block " />
+                <input type="submit" value="Add brand" className="  btn btn-block " />
 
 
             </form>
+            <Link to='/addproduct'> <button  className=" text-center text-xl font-bold  btn btn-warning m-5" >Add product</button> </Link>
         </div>
-
+        
             
         </div>
     );

@@ -1,10 +1,15 @@
+import { useEffect } from "react";
 import Logo from "./Logo";
+import Aos from "aos";
 
 
 const Footer = () => {
+  useEffect(()=>{
+    Aos.init({duration:1000})
+},[])
     return (
         <div>
-            <footer className="footer p-10 bg-base-200 text-base-content">
+            <footer data-aos="flip-down" className="footer p-10 bg-base-200 text-base-content">
   <aside>
     <Logo></Logo>
     <p>EverGreen Autombiles <br/>Providing reliable Serviecs since 1992</p>

@@ -22,26 +22,26 @@ const { name,shortdes,price,brandname,img,type} = cardetails || {}
 
 const addtocart = () =>{
 
-    const carlist = [] ;
+    const carslist = [] ;
 
-    const servicelist = JSON.parse(localStorage.getItem('list'))
+    const carlist = JSON.parse(localStorage.getItem('list'))
 
-    if (!servicelist){
+    if (!carlist){
          
-        carlist.push(cardetails)
-        localStorage.setItem('list',JSON.stringify(carlist))
-        swal('Thankyou for booking');
+        carslist.push(cardetails)
+        localStorage.setItem('list',JSON.stringify(carslist))
+        swal('Sucecssfully add to cart');
         
     }
     else{
 
 
-        const similer = servicelist.find(cardetails => cardetails._id == _id )
+        const similer = carlist.find(cardetails => cardetails._id == _id )
          if(!similer){
 
        
-        carlist.push(...carlist,cardetails)
-        localStorage.setItem('list',JSON.stringify(carlist))
+        carslist.push(...carlist,cardetails)
+        localStorage.setItem('list',JSON.stringify(carslist))
         swal ('Sucecssfully add to cart');
         }
     else{
