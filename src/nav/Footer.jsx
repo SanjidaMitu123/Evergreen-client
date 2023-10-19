@@ -9,7 +9,7 @@ const Footer = () => {
 },[])
     return (
         <div>
-            <footer data-aos="flip-down" className="footer p-10 bg-base-200 text-base-content">
+            <footer data-aos="flip-down" className="footer mt-6 p-10 bg-base-200 text-base-content">
   <aside>
     <Logo></Logo>
     <p>EverGreen Autombiles <br/>Providing reliable Serviecs since 1992</p>

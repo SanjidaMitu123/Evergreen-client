@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import swal from "sweetalert";
 
 const Cardetails = () => {
@@ -70,6 +70,7 @@ const addtocart = () =>{
         {name}
         </p>
       
+      
   
       </div>
     </div>
@@ -119,8 +120,26 @@ const addtocart = () =>{
   
       </div>
     </div>
+    <div className="p-2">
+      <div className="mb-2 mt-[-20px] mr-[40px] ml-10 flex items-center justify-between">
+      <Link to={`/UpdateProduct/${_id}`}>
+    <button  className="btn btn-warning"
+
+      >
+      Update details
+      </button>
+    </Link>
+       
+  
+      </div>
+      
+      
+    </div>
+   
     
     <div className="p-2 pt-2  h-14  ">
+      
+    
       <button 
       onClick={addtocart}
           className="block absolute ml-0 bg-lime-400 h-[40px] mb-2 text-white w-[30%] select-none rounded-lg bg-blue-gray-900/10 py-1 px-2 text-center font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
