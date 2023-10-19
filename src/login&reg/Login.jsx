@@ -1,10 +1,14 @@
 
-import { useContext } from "react";
+
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 
-import Swal from "sweetalert2";
-import { AuthContext } from "../providers/AuthProvider";
+
+import { AuthContext } from "../firebase/Authprovider";
+import { useContext } from "react";
+import swal from "sweetalert";
+
+
 
 
 
@@ -34,13 +38,13 @@ const Login = () => {
          signIn(email, password)
          .then(result =>{
           console.log(result)
-          Swal ('login successfully');
+          swal ('login successfully');
           navigate(location?.state ? location.state : '/');
           
          })
          .catch (error => {
           console.error(error)
-          Swal ("user name or password incorrect")
+          swal ("user name or password incorrect")
          })
          
     }
@@ -65,13 +69,13 @@ const Login = () => {
           </label>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
+          <button className="btn btn-success">Login</button>
         </div>
       </form>
 
-      <button onClick={googlelogin} className="lg:ml-[520px] mt-4 w-[300px] btn btn-secondary">Login with Google</button>
+      <button onClick={googlelogin} className="lg:ml-[520px] mt-4 w-[300px] btn btn-primary">Login with Google</button>
 
-      <p className="text-center mt-5 mb-5">For new Account <Link to='/register' className="font-bold text-cyan-500 mt-5"> Resgister</Link> Now</p>
+      <p className="text-center mt-5 mb-5">For new Account <Link to='/register' className="font-bold text-lime-500 mt-5"> Resgister</Link> Now</p>
             
         
         </div>

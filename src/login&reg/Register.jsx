@@ -1,7 +1,8 @@
 import { useContext } from "react";
-import Swal from "sweetalert2";
-import { AuthContext } from "../providers/AuthProvider";
+import swal from "sweetalert";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../firebase/Authprovider";
+
 
 const Register = () => {
 
@@ -21,11 +22,11 @@ const Register = () => {
          createUser(email,password)
          .then(result =>{
           console.log(result.user)
-          Swal ("Registration Done.Please Login")
+          swal ("Registration Done.Please Login")
          })
          .catch(error =>{
           console.error(error)
-          Swal ("user name or password incorrect")
+          swal ("please give 6 disit password and unique name which desn't register before")
          })
 
     }
@@ -62,10 +63,10 @@ const Register = () => {
           </label>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Register</button>
+          <button className="btn btn-success">Register</button>
         </div>
       </form>
-      <p className="text-center mt-5">Existing Account <Link to='/login' className="font-bold text-cyan-500 mt-5"> Login</Link></p>
+      <p className="text-center mt-5">Existing Account <Link to='/login' className="font-bold text-lime-500 mt-5"> Login</Link></p>
         </div>
     );
 };

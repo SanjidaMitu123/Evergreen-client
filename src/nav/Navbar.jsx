@@ -1,11 +1,13 @@
 import { NavLink } from "react-router-dom";
 
-import { useContext } from "react";
+// import { useContext } from "react";
 // import { AuthContext } from "../../firebase/AuthProvider";
 // import Aos from "aos";
 import 'aos/dist/aos.css';
 import Logo from "./Logo";
-import { AuthContext } from "../providers/AuthProvider";
+import { useContext } from "react";
+import { AuthContext } from "../firebase/Authprovider";
+// import { AuthContext } from "../providers/AuthProvider";
 
 const Navbar = () => {
 
@@ -25,9 +27,9 @@ const Navbar = () => {
    }
     return (
         <div >
-        <nav  className="lg:flex sm:grid sm:grid-cols-3 lg:ml-[240px] text-center items-center relative ">
+        <nav  className="lg:flex sm:grid sm:grid-cols-3 lg:ml-[40px] text-center items-center relative ">
             <Logo></Logo>
-            <ul className=" lg:flex  sm:grid sm:grid-cols-3 lg:ml-12 text-right sm:gap-2 lg:gap-6 mr-6 lg:font-extrabold sm:font-bold lg:text-2xl text-black ">
+            <ul className=" lg:flex  sm:grid sm:grid-cols-3 lg:ml-12 text-right sm:gap-2 lg:gap-6 mr-6 lg:font-extrabold sm:font-bold lg:text-2xl mt-4 text-black ">
                 <li>
                   
                   
@@ -97,17 +99,18 @@ const Navbar = () => {
                   user ?
                    <div>
                    
-                  <button onClick={singOUT} className=" btn btn-secondary">Sing out</button>
+                  <button onClick={singOUT} className=" btn btn-success">Sing out</button>
                   <span className="text-black"> {user.email} </span>
                   </div>
                
 
                   
-                  :<li>
+                  :
+                  <li>
                   <NavLink
                     to="/login"
                     className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-[#ff44b7] underline" : ""
+                    isPending ? "pending" : isActive ? "text-gray-400 underline" : ""
                      }
                     >
                      My Account

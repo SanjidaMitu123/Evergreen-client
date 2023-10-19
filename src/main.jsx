@@ -17,6 +17,11 @@ import Addbrands from './pages/Addbrands';
 // import AuthProvider from './providers/AuthProvider';
 import Login from './login&reg/Login';
 import Register from './login&reg/Register';
+import AuthProvider from './firebase/Authprovider';
+import PrivateRoute from './privaterouter/PrivateRoute';
+import Car from './pages/Car';
+import Cardetails from './pages/Cardetails';
+import Mycart from './pages/Mycart';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +37,7 @@ const router = createBrowserRouter([
       {
           path : "/brands",
           element : <Brands ></Brands>,
+          loader : () => fetch('http://localhost:5000/brands')
           
       },
       {
@@ -41,8 +47,7 @@ const router = createBrowserRouter([
     },
     {
       path : "/MyCart",
-      element : <Addproduct ></Addproduct>,
-      
+      element : <Mycart></Mycart>
   },
   {
     path : "/UpdateProduct",
@@ -52,8 +57,14 @@ const router = createBrowserRouter([
 ,
   {
     path : "/addbrand",
-    element : <Addbrands></Addbrands>,
+    element : <PrivateRoute><Addbrands></Addbrands></PrivateRoute>,
     
+},
+{
+  path : "/cars",
+  element : <Car></Car>,
+  loader : () => fetch('http://localhost:5000/products')
+  
 },
 {
     path : "/login",
@@ -64,6 +75,13 @@ const router = createBrowserRouter([
     path : "/register",
     element : <Register></Register>,
    
+}  ,
+{
+  
+  path : "/cars/:_id",
+  element : <Cardetails></Cardetails>,
+  loader : () => fetch('http://localhost:5000/products')
+   
 } 
     ]
    
@@ -71,6 +89,9 @@ const router = createBrowserRouter([
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <RouterProvider router={router} />
+    <AuthProvider>
+    <RouterProvider router={router} />
+    </AuthProvider>
+    
   </React.StrictMode>,
 )
