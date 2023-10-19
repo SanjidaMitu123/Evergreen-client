@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import Carcard from "./Carcard";
+
+import Carcart from "./Carcart";
 
 const Mycart = () => {
 
@@ -27,7 +28,10 @@ const Mycart = () => {
 
     console.log(carlistview)
 
+    
+    
 
+    
 
 
     return (
@@ -40,10 +44,10 @@ const Mycart = () => {
                 <div className="grid grid-cols-2 gap-16 ">
                     {
                         showall? carlistview.map((car) => (
-                <Carcard key={car._id} car={car} ></Carcard>))
+                <Carcart key={car._id} car={car} ></Carcart>))
                 :
                 carlistview.slice(0,4).map((car) => (
-                    <Carcard key={car._id} car={car} ></Carcard>))
+                    <Carcart key={car._id} car={car} ></Carcart>))
 
                     }
                
