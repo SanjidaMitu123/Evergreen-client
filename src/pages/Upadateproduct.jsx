@@ -25,7 +25,7 @@ const Upadateproduct = () => {
         const updatedproduct = { name,img,brandname,type,price,shortdes,rating }
         console.log(updatedproduct)
 
-        fetch(`http://localhost:5000/products/${_id}`,{
+        fetch(`https://evergreen-automobile-server-qksqlolff-sanjida-mitus-projects.vercel.app/products/${_id}`,{
           method : 'PUT',
           headers:{
               'content-type': 'application/json'

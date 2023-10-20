@@ -12,7 +12,7 @@ const Addbrands = () => {
         const img = form.img.value;
 
         const newbrand = { img,brandname}
-        fetch('http://localhost:5000/brands',{
+        fetch('https://evergreen-automobile-server-qksqlolff-sanjida-mitus-projects.vercel.app/brands',{
             method : 'POST',
             headers:{
                 'content-type': 'application/json'

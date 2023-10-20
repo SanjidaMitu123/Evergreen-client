@@ -18,7 +18,7 @@ const Addproduct = () => {
           const newproduct = { name,img,brandname,type,price,shortdes,rating }
           console.log(newproduct)
 
-          fetch('http://localhost:5000/products',{
+          fetch('https://evergreen-automobile-server-qksqlolff-sanjida-mitus-projects.vercel.app/products',{
             method : 'POST',
             headers:{
                 'content-type': 'application/json'
