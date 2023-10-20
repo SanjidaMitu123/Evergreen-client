@@ -1,8 +1,11 @@
-# React + Vite
+Evergreen Automubile
+live link: https://evergreen-dd091.web.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+features of this project:
+1.user can register and login
+2.after login user can add product
+3.product card are displayed
+4.user can see product details after login
+5.details can be updated
+4.user can add product to cart
+5.user can log out 
