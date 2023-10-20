@@ -34,12 +34,12 @@ const router = createBrowserRouter([
       {
           path : '/',
           element: <Home></Home>,
-          loader : () => fetch('http://localhost:5000/brands')
+          loader : () => fetch('https://evergreen-automobile-server-qksqlolff-sanjida-mitus-projects.vercel.app/brands')
       },
       {
           path : "/brands",
           element : <Brands ></Brands>,
-          loader : () => fetch('http://localhost:5000/brands')
+          loader : () => fetch('https://evergreen-automobile-server-qksqlolff-sanjida-mitus-projects.vercel.app/brands')
           
       },
       {
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
   {
     path : "/UpdateProduct/:id",
     element : <Upadateproduct></Upadateproduct>,
-    loader : ({params})=> fetch(`http://localhost:5000/products/${params.id}`)
+    loader : ({params})=> fetch(`https://evergreen-automobile-server-qksqlolff-sanjida-mitus-projects.vercel.app/products/${params.id}`)
     
 },
 {
@@ -78,7 +78,7 @@ const router = createBrowserRouter([
 {
   path : "/cars",
   element : <Car></Car>,
-  loader : () => fetch('http://localhost:5000/products')
+  loader : () => fetch('https://evergreen-automobile-server-qksqlolff-sanjida-mitus-projects.vercel.app/products')
   
 },
 {
@@ -95,7 +95,7 @@ const router = createBrowserRouter([
   
   path : "/cars/:_id",
   element : <PrivateRoute><Cardetails></Cardetails></PrivateRoute>,
-  loader : () => fetch('http://localhost:5000/products')
+  loader : () => fetch('https://evergreen-automobile-server-qksqlolff-sanjida-mitus-projects.vercel.app/products')
    
 } 
     ]

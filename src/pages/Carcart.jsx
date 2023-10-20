@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
+import swal from "sweetalert";
 
 
 
@@ -8,11 +9,9 @@ const Carcart = ({car}) => {
 
     
 
-    // const handleDelete=(id)=>{
-    //     const carslist = [] ;
-    //     const carlist = JSON.parse(localStorage.getItem('list'))
-    //     const filtered = 
-    // }
+    const handleDelete=()=>{
+       swal ('deleted');
+    }
  
     return (
         <div>
@@ -71,7 +70,7 @@ const Carcart = ({car}) => {
         </button>
         </Link>
         <button 
-        // onClick={()=>handleDelete(_id)}
+        onClick={()=>handleDelete(_id)}
           className="block text-xl border-solid border-2 border-lime-500 text-black code w-[50%] select-none rounded-lg bg-blue-gray-900/10 py-1 px-2 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="button"
         >
